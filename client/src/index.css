@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Small amount of brand styling for the "energy drink" vibe */
+.glass {
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+

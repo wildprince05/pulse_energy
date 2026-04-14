@@ -20,7 +20,7 @@ Full-stack MERN web app for **Pulse Energy**.
 
 ## Environment variables
 
-Create these files (see examples):
+Create these files :
 
 - `server/.env` from `server/.env.example`
 - `client/.env` from `client/.env.example`
