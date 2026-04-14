@@ -43,11 +43,16 @@ let isConnected = false;
 
 async function connectOnce() {
   if (!isConnected) {
-    if (!process.env.MONGO_URI) {
-      throw new Error("❌ MONGO_URI is missing in environment variables");
+    const mongoUri =
+      process.env.MONGO_URI || process.env.MONGODB_URI || process.env.DATABASE_URL;
+
+    if (!mongoUri) {
+      throw new Error(
+        "❌ Missing MongoDB connection string. Set MONGO_URI (or MONGODB_URI / DATABASE_URL) in your deployment environment."
+      );
     }
 
-    await connectDb(process.env.MONGO_URI);
+    await connectDb(mongoUri);
     isConnected = true;
     console.log("✅ MongoDB connected");
   }
